@@ -43,7 +43,10 @@ var freq = 1,
     elem;
 
 function update() {
-    elem.update([newRow(), newRow(), newRow()]);
+    var viewport_height = document.documentElement.clientHeight;
+    if (viewport_height - window.scrollY > 0) {
+        elem.update([newRow(), newRow(), newRow()]);
+    }
     if (freq === 0) {
         setTimeout(update, 3000);
         freqdir = 1;
@@ -155,7 +158,8 @@ window.addEventListener("WebComponentsReady", function() {
 
     get_arrow(function(arrow) {
         const psp1 = document.querySelector("#demo1 perspective-viewer");
-        psp1.load(arrow.slice());
+        const tbl1 = worker.table(arrow.slice());
+        psp1.load(tbl1);
         psp1.restore({
             "row-pivots": ["Sub-Category"],
             "column-pivots": ["Segment"],
@@ -164,12 +168,14 @@ window.addEventListener("WebComponentsReady", function() {
         });
 
         const psp2 = document.querySelector("#get_started perspective-viewer");
-        psp2.load(arrow);
+        const tbl2 = worker.table(arrow.slice());
+        psp2.load(tbl2);
+        psp2.toggleConfig();
         psp2.restore({
             plugin: "d3_heatmap",
-            "row-pivots": ["Sub-Category"],
-            "column-pivots": ["State"],
-            sort: [["Sales", "col asc"]],
+            "column-pivots": ["Sub-Category"],
+            "row-pivots": ["State"],
+            sort: [["Sales","desc"],["Profit","col desc"]],
             columns: ["Profit"],
             aggregates: {Profit: "low"}
         });

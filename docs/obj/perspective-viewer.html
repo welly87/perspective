@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>perspective-viewer API · Perspective</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;a name=&quot;module_perspective-viewer&quot;&gt;&lt;/a&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="perspective-viewer API · Perspective"/><meta property="og:type" content="website"/><meta property="og:url" content="https://perspective.finos.org//index.html"/><meta property="og:description" content="&lt;a name=&quot;module_perspective-viewer&quot;&gt;&lt;/a&gt;"/><meta property="og:image" content="https://perspective.finos.org/img/perspective.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://perspective.finos.org/img/perspective.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><link rel="alternate" type="application/atom+xml" href="https://perspective.finos.org/blog/atom.xml" title="Perspective Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://perspective.finos.org/blog/feed.xml" title="Perspective Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective/dist/umd/perspective.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer/dist/umd/perspective-viewer.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-datagrid/dist/umd/perspective-viewer-datagrid.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-d3fc/dist/umd/perspective-viewer-d3fc.js"></script><script type="text/javascript" src="js/animation.js"></script><script type="text/javascript" src="js/logo.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.png" alt="Perspective"/><h2 class="headerTitleWithLogo">Perspective</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/md/installation.html" target="_self">Docs</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/finos/perspective/" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Javascript API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/md/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/md/js.html">Javascript User Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/md/python.html">Python User Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/md/concepts.html">Conceptual Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/md/styles.html">CSS Styles</a></li><li class="navListItem"><a class="navItem" href="/docs/md/development.html">Developer Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Javascript API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/obj/perspective.html">perspective API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/obj/perspective-viewer.html">perspective-viewer API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Python API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/obj/perspective-python.html">perspective-python API</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>perspective-viewer API · Perspective</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;a name=&quot;module_perspective-viewer&quot;&gt;&lt;/a&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="perspective-viewer API · Perspective"/><meta property="og:type" content="website"/><meta property="og:url" content="https://perspective.finos.org//index.html"/><meta property="og:description" content="&lt;a name=&quot;module_perspective-viewer&quot;&gt;&lt;/a&gt;"/><meta property="og:image" content="https://perspective.finos.org/img/perspective.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://perspective.finos.org/img/perspective.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:900&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective/dist/umd/perspective.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer/dist/umd/perspective-viewer.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-datagrid/dist/umd/perspective-viewer-datagrid.js"></script><script type="text/javascript" src="https://unpkg.com/@finos/perspective-viewer-d3fc/dist/umd/perspective-viewer-d3fc.js"></script><script type="text/javascript" src="js/animation.js"></script><script type="text/javascript" src="js/logo.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.png" alt="Perspective"/><h2 class="headerTitleWithLogo">Perspective</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/md/js.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/finos/perspective/" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/md/js.html">JavaScript User Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/md/python.html">Python User Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/md/table.html">Table</a></li><li class="navListItem"><a class="navItem" href="/docs/md/view.html">View</a></li><li class="navListItem"><a class="navItem" href="/docs/md/server.html">Data Binding</a></li><li class="navListItem"><a class="navItem" href="/docs/md/development.html">Developer Guide</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/obj/perspective.html">perspective API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/obj/perspective-viewer.html">perspective-viewer API</a></li><li class="navListItem"><a class="navItem" href="/docs/obj/perspective-python.html">perspective-python API</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -81,20 +81,16 @@ relevent DOM method e.g. <code>document.createElement(&quot;perspective-viewer&q
 <li><a href="#module_perspective-viewer..PerspectiveViewer+row-pivots">.row-pivots</a> : <code>[ 'Array' ].&lt;String&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+editable">.editable</a> : <code>Boolean</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+throttle">.throttle</a> : <code>Number</code> | <code>String</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+worker">.worker</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+table">.table</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+view">.view</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+load">.load(data)</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+update">.update(data)</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+notifyResize">.notifyResize()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+clone">.clone(widget)</a></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+delete">.delete(delete_table)</a> ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></li>
+<li><a href="#module_perspective-viewer..PerspectiveViewer+delete">.delete()</a> ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+restyleElement">.restyleElement()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+save">.save()</a> ⇒ <code>object</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+restore">.restore(config)</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+flush">.flush()</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+clear">.clear()</a></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+replace">.replace()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+reset">.reset()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+copy">.copy()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+toggleConfig">.toggleConfig()</a></li>
@@ -121,20 +117,16 @@ relevent DOM method e.g. <code>document.createElement(&quot;perspective-viewer&q
 <li><a href="#module_perspective-viewer..PerspectiveViewer+row-pivots">.row-pivots</a> : <code>[ 'Array' ].&lt;String&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+editable">.editable</a> : <code>Boolean</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+throttle">.throttle</a> : <code>Number</code> | <code>String</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+worker">.worker</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+table">.table</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+view">.view</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+load">.load(data)</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+update">.update(data)</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+notifyResize">.notifyResize()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+clone">.clone(widget)</a></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+delete">.delete(delete_table)</a> ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></li>
+<li><a href="#module_perspective-viewer..PerspectiveViewer+delete">.delete()</a> ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+restyleElement">.restyleElement()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+save">.save()</a> ⇒ <code>object</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+restore">.restore(config)</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+flush">.flush()</a> ⇒ <code>[ 'Promise' ].&lt;void&gt;</code></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+clear">.clear()</a></li>
-<li><a href="#module_perspective-viewer..PerspectiveViewer+replace">.replace()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+reset">.reset()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+copy">.copy()</a></li>
 <li><a href="#module_perspective-viewer..PerspectiveViewer+toggleConfig">.toggleConfig()</a></li>
@@ -289,20 +281,6 @@ render framerate.</p>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">perspective-viewer</span> <span class="hljs-attr">throttle</span>=<span class="hljs-string">"1000"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">perspective-viewer</span>&gt;</span></span>
 </code></pre>
 <hr>
-<p><a name="module_perspective-viewer..PerspectiveViewer+worker"></a></p>
-<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerworker"></a><a href="#perspectiveviewerworker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.worker</h4>
-<p>This element's <code>perspective</code> worker instance. This property is not
-reflected as an HTML attribute, and is readonly; it can be effectively
-set however by calling the <code>load() method with a</code>perspective.table`
-instance from the preferred worker.</p>
-<p><strong>Kind</strong>: instance property of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a>  <br>
-<strong>Read only</strong>: true<br>
-<strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">let</span> elem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'my_viewer'</span>);
-<span class="hljs-keyword">let</span> table = elem.worker.table([{<span class="hljs-attr">x</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">2</span>}]);
-elem.load(table);
-</code></pre>
-<hr>
 <p><a name="module_perspective-viewer..PerspectiveViewer+table"></a></p>
 <h4><a class="anchor" aria-hidden="true" id="perspectiveviewertable"></a><a href="#perspectiveviewertable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.table</h4>
 <p>This element's <code>perspective.table</code> instance.</p>
@@ -329,13 +307,9 @@ PerspectiveViewer#perspective-view-update
 ]);event:</code>  <br>
 <strong>Params</strong></p>
 <ul>
-<li>data <code>any</code> - The data to load.  Works with the same input types
-supported by <code>perspective.table</code>.</li>
+<li>data <code>any</code> - The data to load, as a <code>perspective.Table</code> or
+<code>Promise&lt;perspective.Table&gt;</code>.</li>
 </ul>
-<p><strong>Example</strong> <em>(Load CSV)</em></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> my_viewer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'#my_viewer'</span>);
-my_viewer.load(<span class="hljs-string">"x,y\n1,a\n2,b"</span>);
-</code></pre>
 <p><strong>Example</strong> <em>(Load perspective.table)</em></p>
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> my_viewer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'#my_viewer'</span>);
 <span class="hljs-keyword">const</span> tbl = perspective.table(<span class="hljs-string">"x,y\n1,a\n2,b"</span>);
@@ -345,24 +319,6 @@ my_viewer.load(tbl);
 <pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> my_viewer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'#my_viewer'</span>);
 <span class="hljs-keyword">const</span> tbl = <span class="hljs-keyword">async</span> () =&gt; perspective.table(<span class="hljs-string">"x,y\n1,a\n2,b"</span>);
 my_viewer.load(tbl);
-</code></pre>
-<hr>
-<p><a name="module_perspective-viewer..PerspectiveViewer+update"></a></p>
-<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerupdatedata"></a><a href="#perspectiveviewerupdatedata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.update(data)</h4>
-<p>Updates this element's <code>perspective.table</code> with new data.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a>  <br>
-<strong>Emits</strong>: <code>PerspectiveViewer#event:perspective-view-update</code>  <br>
-<strong>Params</strong></p>
-<ul>
-<li>data <code>any</code> - The data to load.  Works with the same input types
-supported by <code>perspective.table.update</code>.</li>
-</ul>
-<p><strong>Example</strong></p>
-<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> my_viewer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'#my_viewer'</span>);
-my_viewer.update([
-    {<span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'a'</span>},
-    {<span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'b'</span>}
-]);
 </code></pre>
 <hr>
 <p><a name="module_perspective-viewer..PerspectiveViewer+notifyResize"></a></p>
@@ -382,18 +338,15 @@ elements</p>
 </ul>
 <hr>
 <p><a name="module_perspective-viewer..PerspectiveViewer+delete"></a></p>
-<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerdeletedelete_table-⇒-code-x27promisex27-ltbooleangtcode"></a><a href="#perspectiveviewerdeletedelete_table-⇒-code-x27promisex27-ltbooleangtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.delete(delete_table) ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></h4>
-<p>Deletes this element's data and clears it's internal state (but not its
-user state).  This (or the underlying <code>perspective.table</code>'s equivalent
-method) must be called in order for its memory to be reclaimed.</p>
+<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerdelete-⇒-code-x27promisex27-ltbooleangtcode"></a><a href="#perspectiveviewerdelete-⇒-code-x27promisex27-ltbooleangtcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.delete() ⇒ <code>[ 'Promise' ].&lt;Boolean&gt;</code></h4>
+<p>Deletes this element and clears it's internal state (but not its
+user state).  This (or the underlying <code>perspective.view</code>'s equivalent
+method) must be called in order for its memory to be reclaimed, as well
+as the recipcorcal method on the <code>perspective.table</code> which this viewer is
+bound to.</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a>  <br>
 <strong>Returns</strong>: <code>[ 'Promise' ].&lt;Boolean&gt;</code> - Whether or not this call resulted in the
-underlying <code>perspective.table</code> actually being deleted.<br>
-<strong>Params</strong></p>
-<ul>
-<li>delete_table <code>Boolean</code> <code> = true</code> - Should a delete call also be made to the
-underlying <code>table()</code>.</li>
-</ul>
+underlying <code>perspective.table</code> actually being deleted.</p>
 <hr>
 <p><a name="module_perspective-viewer..PerspectiveViewer+restyleElement"></a></p>
 <h4><a class="anchor" aria-hidden="true" id="perspectiveviewerrestyleelement"></a><a href="#perspectiveviewerrestyleelement" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.restyleElement()</h4>
@@ -425,16 +378,6 @@ been applied.<br>
 <strong>Returns</strong>: <code>[ 'Promise' ].&lt;void&gt;</code> - A promise which resolves when the current
 attribute state has been applied.</p>
 <hr>
-<p><a name="module_perspective-viewer..PerspectiveViewer+clear"></a></p>
-<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerclear"></a><a href="#perspectiveviewerclear" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.clear()</h4>
-<p>Clears the rows in the current <a href="table">table</a>.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a></p>
-<hr>
-<p><a name="module_perspective-viewer..PerspectiveViewer+replace"></a></p>
-<h4><a class="anchor" aria-hidden="true" id="perspectiveviewerreplace"></a><a href="#perspectiveviewerreplace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.replace()</h4>
-<p>Replaces all rows in the current <a href="table">table</a>.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a></p>
-<hr>
 <p><a name="module_perspective-viewer..PerspectiveViewer+reset"></a></p>
 <h4><a class="anchor" aria-hidden="true" id="perspectiveviewerreset"></a><a href="#perspectiveviewerreset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>perspectiveViewer.reset()</h4>
 <p>Reset's this element's view state and attributes to default.  Does not
@@ -461,4 +404,4 @@ restrictions on clipboard access.  See
 internally when edits are made using DataGrid.</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_perspective-viewer..PerspectiveViewer"><code>PerspectiveViewer</code></a></p>
 <hr>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/obj/perspective.html"><span class="arrow-prev">← </span><span>perspective API</span></a><a class="docs-next button" href="/docs/obj/perspective-python.html"><span>perspective-python API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#perspective-viewer">perspective-viewer</a><ul class="toc-headings"><li><a href="#perspective-viewerperspectiveviewer-⇐-codehtmlelementcode">perspective-viewer~PerspectiveViewer ⇐ <code>HTMLElement</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/md/installation.html">Installation</a><a href="/docs/md/js.html">Javascript User Guide</a><a href="/docs/md/python.html">Python User Guide</a><a href="/docs/obj/perspective.html">Perspective API</a><a href="/docs/obj/perspective-viewer.html">Perspective Viewer API</a><a href="/docs/obj/perspective-python-table.html">Perspective Python API</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/finos/perspective/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Perspective Authors</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/obj/perspective.html"><span class="arrow-prev">← </span><span>perspective API</span></a><a class="docs-next button" href="/docs/obj/perspective-python.html"><span>perspective-python API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#perspective-viewer">perspective-viewer</a><ul class="toc-headings"><li><a href="#perspective-viewerperspectiveviewer-⇐-codehtmlelementcode">perspective-viewer~PerspectiveViewer ⇐ <code>HTMLElement</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/md/js.html">Javascript User Guide</a><a href="/docs/md/python.html">Python User Guide</a><a href="/docs/obj/perspective.html">Perspective API</a><a href="/docs/obj/perspective-viewer.html">Perspective Viewer API</a><a href="/docs/obj/perspective-python-table.html">Perspective Python API</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/finos/perspective/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2021 Perspective Authors</section></footer></div></body></html>
