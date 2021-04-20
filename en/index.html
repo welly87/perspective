@@ -18,15 +18,15 @@ and <a href="https://jupyterlab.readthedocs.io/en/stable/">Jupyterlab</a> Widget
 WebWorker (WebAssembly) or virtually via WebSocket (Python/Node), and a suite of
 Datagrid and <a href="https://d3fc.io/">D3FC</a> Chart plugins.</p></li>
 </ul>
-</span></div></div><div class="blockImage"><perspective-viewer></perspective-viewer></div></div></div></div><div class="container paddingBottom paddingTop" id="javascript"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><img src="/img/demo_small.gif"/></div><div class="blockContent"><div><span><h2><a class="anchor" aria-hidden="true" id="javascript"></a><a href="#javascript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript</h2>
+</span></div></div><div class="blockImage"><perspective-viewer></perspective-viewer></div></div></div></div><div class="container paddingBottom paddingTop" id="javascript"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><img src="/img/demo_small.gif"/></div><div class="blockContent"><div><span><h2><a class="anchor" aria-hidden="true" id="web-browser"></a><a href="#web-browser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web Browser</h2>
 <p>Query-driven dashboards built on Perspective
 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements</a>
-are completely user-configurable, and easy to integrate into any application
-framework.</p>
+of JavaScript are completely user-configurable, and easy to integrate into any
+web application framework.</p>
 <p>Using Perspective's simple <em>relational</em> grammar, elements like
 <code>&lt;perspective-workspace&gt;</code> can be <em>symmetrically</em> configured, by API or
 through the User Interface, and emit dataset-aware Events for scriptable
-interactivity.  Web Applications built on Perspective
+interactivity.  Web Applications built in JavaScript with Perspective
 Custom Elements can be re-hydrated from their serialized state, driven
 from external Events, or persisted to any store.  Workspaces can mix
 virtual, server-side Python data with in-browser client data seamlessly, and
@@ -34,9 +34,8 @@ independent data Views can be cross-filtered, duplicated, exported, stacked
 and saved.</p>
 <p>To achieve Desktop-like performance in the Browser, Perspective for JavaScript
 relies on <a href="https://webassembly.org/">WebAssembly</a> for excellent
-<em>query calculation</em> performance, and <a href="https://arrow.apache.org/">Apache Arrow</a>
-for its conservative <em>memory footprint</em> and high-performance
-<em>data serialization</em>.</p>
+<em>query calculation</em> time, and <a href="https://arrow.apache.org/">Apache Arrow</a>
+for its conservative <em>memory footprint</em> and efficient <em>data serialization</em>.</p>
 </span></div></div></div></div></div></div><div class="container paddingBottom paddingTop" id="demo1"><div class="wrapper"><div class="imageAlignRight imageAlignSide"><div class="blockContent"><h2><div></div></h2><div><span><h2><a class="anchor" aria-hidden="true" id="python"></a><a href="#python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python</h2>
 <p><code>perspective-python</code>, built on the same C++ data engine used by the
 <a href="https://perspective.finos.org/docs/md/js.html">WebAssembly version</a>, implements

@@ -29,7 +29,7 @@ styleElement.innerText = `
 .homeContainer perspective-viewer, perspective-viewer {
     box-shadow: none !important;
     overflow: visible !important;
-    --plugin--box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    --plugin--box-shadow:  0 2px 4px 0 rgb(0 0 0 / 10%);
 }
 
 .homeContainer perspective-viewer {
@@ -42,16 +42,16 @@ var freq = 1,
     freqdir = 1,
     elem;
 
-function update() {
+function update(table) {
     var viewport_height = document.documentElement.clientHeight;
     if (viewport_height - window.scrollY > 0) {
-        elem.table.update([newRow(), newRow(), newRow()]);
+        table.update([newRow(), newRow(), newRow()]);
     }
     if (freq === 0) {
-        setTimeout(update, 3000);
+        setTimeout(() => update(table), 3000);
         freqdir = 1;
     } else {
-        setTimeout(update, Math.max(20, 200 / freq));
+        setTimeout(() => update(table), Math.max(20, 200 / freq));
     }
     if (freq > 60) {
         freqdir = -1;
@@ -132,19 +132,19 @@ function get_arrow(callback) {
     xhr.send(null);
 }
 
-window.addEventListener("WebComponentsReady", function() {
+window.addEventListener("DOMContentLoaded", async function() {
     var data = [];
     for (var x = 0; x < 100; x++) {
         data.push(newRow());
     }
     elem = Array.prototype.slice.call(document.querySelectorAll("perspective-viewer"))[0];
     var worker = window.perspective.worker();
-    var tbl = worker.table(data, {index: "id"});
+    var tbl = await worker.table(data, {index: "id"});
     elem.load(tbl);
-    elem._toggle_config();
+    elem.toggleConfig();
 
     setTimeout(function() {
-        update(0);
+        update(tbl, 0);
     });
 
     document.querySelector("#grid").addEventListener("mouseenter", () => select("#grid"));
@@ -156,9 +156,9 @@ window.addEventListener("WebComponentsReady", function() {
 
     select("#grid");
 
-    get_arrow(function(arrow) {
+    get_arrow(async function(arrow) {
         const psp1 = document.querySelector("#demo1 perspective-viewer");
-        const tbl1 = worker.table(arrow.slice());
+        const tbl1 = await worker.table(arrow.slice());
         psp1.load(tbl1);
         psp1.restore({
             "row-pivots": ["Sub-Category"],
@@ -168,7 +168,7 @@ window.addEventListener("WebComponentsReady", function() {
         });
 
         const psp2 = document.querySelector("#get_started perspective-viewer");
-        const tbl2 = worker.table(arrow.slice());
+        const tbl2 = await worker.table(arrow.slice());
         psp2.load(tbl2);
         psp2.toggleConfig();
         psp2.restore({
