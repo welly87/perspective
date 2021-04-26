@@ -11,6 +11,80 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/concepts.js":
+/*!************************!*\
+  !*** ./js/concepts.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _finos_perspective__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @finos/perspective */ "../packages/perspective/dist/esm/perspective.parallel.js");
+
+
+const worker = _finos_perspective__WEBPACK_IMPORTED_MODULE_0__.default.shared_worker();
+
+async function main() {
+    const arrow = await fetch("../../arrow/superstore.arrow");
+    const table = await worker.table(await arrow.arrayBuffer());
+
+    const viewers = document.querySelectorAll("perspective-viewer:not(.nosuperstore)");
+    for (const viewer of viewers) {
+        console.log("test3");
+        viewer.load(table);
+        viewer.toggleConfig();
+    }
+    console.log("test4");
+
+    let state = localStorage.getItem("lang_pref") || "Python";
+    let ICON = `<span style="font-family:'Material Icons';vertical-align:bottom">input</span>`;
+    let ARROW_ICON = `<span style="font-family:'Material Icons';vertical-align:bottom">arrow_forward</span>`;
+    for (const pre of document.querySelectorAll("pre")) {
+        const code = pre.children[0];
+        if (code.classList.contains("language-html")) {
+            continue;
+        }
+        const name = code.classList.contains("language-javascript") ? "Javascript" : "Python";
+        const next = name === "Javascript" ? "Python" : "Javascript";
+
+        pre.innerHTML =
+            `<a class="toggle-language" href="#" title="Toggle to ${next}">${ICON} <span class="language">${name}</span> <span class="next">${ARROW_ICON} ${next}</span></a>` + pre.innerHTML;
+        if (name !== state) {
+            pre.style.display = "none";
+        } else {
+            pre.style.display = "block";
+        }
+    }
+
+    for (const link of document.querySelectorAll("pre a")) {
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            state = state === "Python" ? "Javascript" : "Python";
+            localStorage.setItem("lang_pref", state);
+            for (const pre of document.querySelectorAll("pre")) {
+                const code = pre.children[1];
+                if (!code || code.classList.contains("language-html")) {
+                    continue;
+                }
+                const name = code.classList.contains("language-javascript") ? "Javascript" : "Python";
+                if (name !== state) {
+                    pre.style.display = "none";
+                } else if (name !== "html") {
+                    pre.style.display = "block";
+                }
+            }
+        });
+    }
+}
+console.log("test1");
+window.addEventListener("DOMContentLoaded", () => {
+    console.log("test2");
+    main();
+});
+
+
+/***/ }),
+
 /***/ "./js/index.js":
 /*!*********************!*\
   !*** ./js/index.js ***!
@@ -25,6 +99,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _finos_perspective_viewer_d3fc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @finos/perspective-viewer-d3fc */ "../packages/perspective-viewer-d3fc/dist/cjs/perspective-viewer-d3fc.js");
 /* harmony import */ var _finos_perspective_viewer_d3fc__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_finos_perspective_viewer_d3fc__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _logo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logo.js */ "./js/logo.js");
+/* harmony import */ var _concepts_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./concepts.js */ "./js/concepts.js");
+
 
 
 
@@ -167,12 +243,16 @@ function get_arrow(callback) {
 }
 
 window.addEventListener("DOMContentLoaded", async function() {
+    if (window.location.pathname !== "/") {
+        return;
+    }
+
     var data = [];
     for (var x = 0; x < 100; x++) {
         data.push(newRow());
     }
     elem = Array.prototype.slice.call(document.querySelectorAll("perspective-viewer"))[0];
-    var worker = _finos_perspective__WEBPACK_IMPORTED_MODULE_0__.default.worker();
+    var worker = _finos_perspective__WEBPACK_IMPORTED_MODULE_0__.default.shared_worker();
     var tbl = await worker.table(data, {index: "id"});
     elem.load(tbl);
     elem.toggleConfig();
