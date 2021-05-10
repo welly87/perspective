@@ -307,6 +307,13 @@ class Server {
         this.perspective.initialize_profile_thread();
         break;
 
+      case "memory_usage":
+        this.post({
+          id: msg.id,
+          data: this.perspective.memory_usage()
+        });
+        break;
+
       case "init":
         this.init(msg);
         break;
@@ -519,7 +526,7 @@ class Server {
       // cannot have a host without a table, but can have a host without a
       // view
       this.process_error(msg, {
-        message: "View is not initialized"
+        message: "View method cancelled"
       });
       return;
     }
@@ -1163,6 +1170,12 @@ if (typeof self !== "undefined" && self.performance === undefined) {
   function _remove_process(table_id) {
     delete _POOL_DEBOUNCES[table_id];
   }
+
+  function memory_usage() {
+    const mem = performance.memory ? JSON.parse(JSON.stringify(performance.memory, ["totalJSHeapSize", "usedJSHeapSize", "jsHeapSizeLimit"])) : process.memoryUsage();
+    mem.wasmHeap = __MODULE__.HEAP8.length;
+    return mem;
+  }
   /**
    * Common logic for creating and registering a Table.
    *
@@ -1348,7 +1361,9 @@ if (typeof self !== "undefined" && self.performance === undefined) {
     let extracted = [];
 
     for (let i = 0; i < vector.size(); i++) {
-      extracted.push(__MODULE__.scalar_to_val(vector.get(i), false, true));
+      let s = vector.get(i);
+      extracted.push(__MODULE__.scalar_to_val(s, false, true));
+      s.delete();
     }
 
     vector.delete();
@@ -1591,8 +1606,11 @@ if (typeof self !== "undefined" && self.performance === undefined) {
             formatter.initColumnValue(data, row, "__ROW_PATH__");
 
             for (let i = 0; i < row_path.size(); i++) {
-              const value = __MODULE__.scalar_to_val(row_path.get(i), false, false);
+              const s = row_path.get(i);
 
+              const value = __MODULE__.scalar_to_val(s, false, false);
+
+              s.delete();
               formatter.addColumnValue(data, row, "__ROW_PATH__", value);
 
               if (get_ids) {
@@ -1629,10 +1647,15 @@ if (typeof self !== "undefined" && self.performance === undefined) {
         for (let i = 0; i < keys.size(); i++) {
           // TODO: if __INDEX__ and set index have the same value,
           // don't we need to make sure that it only emits one?
-          const value = __MODULE__.scalar_to_val(keys.get(i), false, false);
+          const s = keys.get(i);
 
+          const value = __MODULE__.scalar_to_val(s, false, false);
+
+          s.delete();
           formatter.addColumnValue(data, row, "__INDEX__", value);
         }
+
+        keys.delete();
       } // we could add an api to just clone the index column if
       // it's already calculated
 
@@ -1641,10 +1664,15 @@ if (typeof self !== "undefined" && self.performance === undefined) {
         const keys = slice.get_pkeys(ridx, 0);
 
         for (let i = 0; i < keys.size(); i++) {
-          const value = __MODULE__.scalar_to_val(keys.get(i), false, false);
+          const s = keys.get(i);
 
+          const value = __MODULE__.scalar_to_val(s, false, false);
+
+          s.delete();
           formatter.addColumnValue(data, row, "__ID__", value);
         }
+
+        keys.delete();
       }
 
       if (row_path) {
@@ -2922,6 +2950,7 @@ if (typeof self !== "undefined" && self.performance === undefined) {
       return this;
     },
     initialize_profile_thread,
+    memory_usage,
 
     /**
      * A factory method for constructing {@link module:perspective~table}s.
