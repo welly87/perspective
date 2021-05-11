@@ -158,7 +158,7 @@ function update(table) {
         table.update([newRow(), newRow(), newRow()]);
     }
     if (freq === 0) {
-        setTimeout(() => update(table), 3000);
+        setTimeout(() => update(table), 3000000);
         freqdir = 1;
     } else {
         setTimeout(() => update(table), Math.max(20, 200 / freq));
@@ -73698,6 +73698,7 @@ D3FCChartElement = (_dec = (0,_finos_perspective_viewer_src_js_utils__WEBPACK_IM
       const newValues = [newSettings.crossValues, newSettings.mainValues, newSettings.splitValues, newSettings.realValues];
       if ((0,_utils_utils__WEBPACK_IMPORTED_MODULE_3__.areArraysEqualSimple)(oldValues, newValues)) return { ...oldSettings,
         data: newSettings.data,
+        agg_paths: newSettings.agg_paths,
         colorStyles: null
       };
     }
@@ -73726,15 +73727,15 @@ function getD3FCStyles() {
 /*!***************************************!*\
   !*** ./dist/esm/series/areaSeries.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_242371__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_242413__) => {
 
 "use strict";
-__nested_webpack_require_242371__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_242371__.d(__webpack_exports__, {
+__nested_webpack_require_242413__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_242413__.d(__webpack_exports__, {
 /* harmony export */   "areaSeries": () => /* binding */ areaSeries
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_242371__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_242371__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_242413__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_242413__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -73759,16 +73760,16 @@ function areaSeries(settings, color) {
 /*!**************************************!*\
   !*** ./dist/esm/series/barSeries.js ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_243705__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_243747__) => {
 
 "use strict";
-__nested_webpack_require_243705__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_243705__.d(__webpack_exports__, {
+__nested_webpack_require_243747__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_243747__.d(__webpack_exports__, {
 /* harmony export */   "barSeries": () => /* binding */ barSeries
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_243705__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_243705__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tooltip_tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_243705__(/*! ../tooltip/tooltip */ "./dist/esm/tooltip/tooltip.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_243747__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_243747__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tooltip_tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_243747__(/*! ../tooltip/tooltip */ "./dist/esm/tooltip/tooltip.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -73814,18 +73815,18 @@ const minBandwidth = adaptee => {
 /*!************************************************!*\
   !*** ./dist/esm/series/categoryPointSeries.js ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_245853__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_245895__) => {
 
 "use strict";
-__nested_webpack_require_245853__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_245853__.d(__webpack_exports__, {
+__nested_webpack_require_245895__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_245895__.d(__webpack_exports__, {
 /* harmony export */   "categoryPointSeries": () => /* binding */ categoryPointSeries,
 /* harmony export */   "symbolType": () => /* binding */ symbolType
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_245853__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_245853__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_245853__(/*! ./seriesColors */ "./dist/esm/series/seriesColors.js");
-/* harmony import */ var _seriesSymbols__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_245853__(/*! ./seriesSymbols */ "./dist/esm/series/seriesSymbols.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_245895__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_245895__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_245895__(/*! ./seriesColors */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var _seriesSymbols__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_245895__(/*! ./seriesSymbols */ "./dist/esm/series/seriesSymbols.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -73863,17 +73864,17 @@ function symbolType(settings) {
 /*!****************************************!*\
   !*** ./dist/esm/series/colorStyles.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_248187__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_248229__) => {
 
 "use strict";
-__nested_webpack_require_248187__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_248187__.d(__webpack_exports__, {
+__nested_webpack_require_248229__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_248229__.d(__webpack_exports__, {
 /* harmony export */   "initialiseStyles": () => /* binding */ initialiseStyles
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_248187__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_248187__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gradient_parser__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_248187__(/*! gradient-parser */ "gradient-parser");
-/* harmony import */ var gradient_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_248187__.n(gradient_parser__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_248229__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_248229__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gradient_parser__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_248229__(/*! gradient-parser */ "gradient-parser");
+/* harmony import */ var gradient_parser__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_248229__.n(gradient_parser__WEBPACK_IMPORTED_MODULE_1__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -73948,16 +73949,16 @@ const parseGradient = (gradient, opacity) => {
 /*!******************************************!*\
   !*** ./dist/esm/series/heatmapSeries.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_251222__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_251264__) => {
 
 "use strict";
-__nested_webpack_require_251222__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_251222__.d(__webpack_exports__, {
+__nested_webpack_require_251264__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_251264__.d(__webpack_exports__, {
 /* harmony export */   "heatmapSeries": () => /* binding */ heatmapSeries
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_251222__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_251222__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tooltip_tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_251222__(/*! ../tooltip/tooltip */ "./dist/esm/tooltip/tooltip.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_251264__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_251264__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tooltip_tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_251264__(/*! ../tooltip/tooltip */ "./dist/esm/tooltip/tooltip.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -73984,16 +73985,16 @@ function heatmapSeries(settings, color) {
 /*!***************************************!*\
   !*** ./dist/esm/series/lineSeries.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_252932__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_252974__) => {
 
 "use strict";
-__nested_webpack_require_252932__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_252932__.d(__webpack_exports__, {
+__nested_webpack_require_252974__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_252974__.d(__webpack_exports__, {
 /* harmony export */   "lineSeries": () => /* binding */ lineSeries
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_252932__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_252932__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _seriesColors_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_252932__(/*! ./seriesColors.js */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_252974__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_252974__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _seriesColors_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_252974__(/*! ./seriesColors.js */ "./dist/esm/series/seriesColors.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74019,16 +74020,16 @@ function lineSeries(settings, color) {
 /*!*********************************************!*\
   !*** ./dist/esm/series/ohlcCandleSeries.js ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_254499__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_254541__) => {
 
 "use strict";
-__nested_webpack_require_254499__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_254499__.d(__webpack_exports__, {
+__nested_webpack_require_254541__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_254541__.d(__webpack_exports__, {
 /* harmony export */   "ohlcCandleSeries": () => /* binding */ ohlcCandleSeries
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_254499__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_254499__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _series_seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_254499__(/*! ../series/seriesColors */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_254541__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_254541__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _series_seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_254541__(/*! ../series/seriesColors */ "./dist/esm/series/seriesColors.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74067,19 +74068,19 @@ function ohlcCandleSeries(settings, seriesCanvas, upColor) {
 /*!**********************************************!*\
   !*** ./dist/esm/series/pointSeriesCanvas.js ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_257282__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_257324__) => {
 
 "use strict";
-__nested_webpack_require_257282__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_257282__.d(__webpack_exports__, {
+__nested_webpack_require_257324__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_257324__.d(__webpack_exports__, {
 /* harmony export */   "pointSeriesCanvas": () => /* binding */ pointSeriesCanvas,
 /* harmony export */   "symbolTypeFromGroups": () => /* binding */ symbolTypeFromGroups
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_257282__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_257282__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_257282__(/*! ./seriesColors */ "./dist/esm/series/seriesColors.js");
-/* harmony import */ var _seriesKey__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_257282__(/*! ./seriesKey */ "./dist/esm/series/seriesKey.js");
-/* harmony import */ var _seriesSymbols__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_257282__(/*! ./seriesSymbols */ "./dist/esm/series/seriesSymbols.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_257324__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_257324__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_257324__(/*! ./seriesColors */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var _seriesKey__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_257324__(/*! ./seriesKey */ "./dist/esm/series/seriesKey.js");
+/* harmony import */ var _seriesSymbols__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_257324__(/*! ./seriesSymbols */ "./dist/esm/series/seriesSymbols.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74133,11 +74134,11 @@ function symbolTypeFromGroups(settings) {
 /*!*****************************************!*\
   !*** ./dist/esm/series/seriesColors.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_260059__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_260101__) => {
 
 "use strict";
-__nested_webpack_require_260059__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_260059__.d(__webpack_exports__, {
+__nested_webpack_require_260101__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_260101__.d(__webpack_exports__, {
 /* harmony export */   "seriesColors": () => /* binding */ seriesColors,
 /* harmony export */   "seriesColorsFromDistinct": () => /* binding */ seriesColorsFromDistinct,
 /* harmony export */   "seriesColorsFromGroups": () => /* binding */ seriesColorsFromGroups,
@@ -74146,11 +74147,11 @@ __nested_webpack_require_260059__.r(__webpack_exports__);
 /* harmony export */   "withOpacity": () => /* binding */ withOpacity,
 /* harmony export */   "setOpacity": () => /* binding */ setOpacity
 /* harmony export */ });
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_260059__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_260059__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_260059__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_260059__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _seriesKey__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_260059__(/*! ./seriesKey */ "./dist/esm/series/seriesKey.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_260101__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_260101__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_260101__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_260101__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _seriesKey__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_260101__(/*! ./seriesKey */ "./dist/esm/series/seriesKey.js");
 
 
 /******************************************************************************
@@ -74265,11 +74266,11 @@ function setOpacity(opacity) {
 /*!**************************************!*\
   !*** ./dist/esm/series/seriesKey.js ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_264552__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_264594__) => {
 
 "use strict";
-__nested_webpack_require_264552__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_264552__.d(__webpack_exports__, {
+__nested_webpack_require_264594__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_264594__.d(__webpack_exports__, {
 /* harmony export */   "groupFromKey": () => /* binding */ groupFromKey
 /* harmony export */ });
 /******************************************************************************
@@ -74291,19 +74292,19 @@ function groupFromKey(key) {
 /*!****************************************!*\
   !*** ./dist/esm/series/seriesRange.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_265425__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_265467__) => {
 
 "use strict";
-__nested_webpack_require_265425__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_265425__.d(__webpack_exports__, {
+__nested_webpack_require_265467__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_265467__.d(__webpack_exports__, {
 /* harmony export */   "seriesLinearRange": () => /* binding */ seriesLinearRange,
 /* harmony export */   "seriesColorRange": () => /* binding */ seriesColorRange
 /* harmony export */ });
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_265425__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_265425__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_265425__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_265425__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _axis_linearAxis__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_265425__(/*! ../axis/linearAxis */ "./dist/esm/axis/linearAxis.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_265467__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_265467__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_265467__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_265467__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _axis_linearAxis__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_265467__(/*! ../axis/linearAxis */ "./dist/esm/axis/linearAxis.js");
 
 
 /******************************************************************************
@@ -74369,15 +74370,15 @@ const multiInterpolator = gradientPairs => {
 /*!******************************************!*\
   !*** ./dist/esm/series/seriesSymbols.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_268933__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_268975__) => {
 
 "use strict";
-__nested_webpack_require_268933__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_268933__.d(__webpack_exports__, {
+__nested_webpack_require_268975__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_268975__.d(__webpack_exports__, {
 /* harmony export */   "fromDomain": () => /* binding */ fromDomain
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_268933__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_268933__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_268975__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_268975__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74399,16 +74400,16 @@ function fromDomain(domain) {
 /*!*************************************************!*\
   !*** ./dist/esm/series/sunburst/sunburstArc.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_270475__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_270517__) => {
 
 "use strict";
-__nested_webpack_require_270475__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_270475__.d(__webpack_exports__, {
+__nested_webpack_require_270517__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_270517__.d(__webpack_exports__, {
 /* harmony export */   "drawArc": () => /* binding */ drawArc,
 /* harmony export */   "arcVisible": () => /* binding */ arcVisible
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_270475__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_270475__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_270517__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_270517__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74428,17 +74429,17 @@ const arcVisible = d => d.y0 >= 1 && d.x1 > d.x0;
 /*!***************************************************!*\
   !*** ./dist/esm/series/sunburst/sunburstClick.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_271958__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_272000__) => {
 
 "use strict";
-__nested_webpack_require_271958__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_271958__.d(__webpack_exports__, {
+__nested_webpack_require_272000__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_272000__.d(__webpack_exports__, {
 /* harmony export */   "clickHandler": () => /* binding */ clickHandler
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_271958__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_271958__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sunburstArc__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_271958__(/*! ./sunburstArc */ "./dist/esm/series/sunburst/sunburstArc.js");
-/* harmony import */ var _sunburstLabel__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_271958__(/*! ./sunburstLabel */ "./dist/esm/series/sunburst/sunburstLabel.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_272000__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_272000__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _sunburstArc__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_272000__(/*! ./sunburstArc */ "./dist/esm/series/sunburst/sunburstArc.js");
+/* harmony import */ var _sunburstLabel__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_272000__(/*! ./sunburstLabel */ "./dist/esm/series/sunburst/sunburstLabel.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74488,18 +74489,18 @@ const clickHandler = (data, g, parent, parentTitle, path, label, radius, split, 
 /*!***************************************************!*\
   !*** ./dist/esm/series/sunburst/sunburstColor.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_275212__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_275254__) => {
 
 "use strict";
-__nested_webpack_require_275212__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_275212__.d(__webpack_exports__, {
+__nested_webpack_require_275254__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_275254__.d(__webpack_exports__, {
 /* harmony export */   "treeColor": () => /* binding */ treeColor
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_275212__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_275212__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _axis_flatten__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_275212__(/*! ../../axis/flatten */ "./dist/esm/axis/flatten.js");
-/* harmony import */ var _seriesRange__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_275212__(/*! ../seriesRange */ "./dist/esm/series/seriesRange.js");
-/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_275212__(/*! ../seriesColors */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_275254__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_275254__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _axis_flatten__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_275254__(/*! ../../axis/flatten */ "./dist/esm/axis/flatten.js");
+/* harmony import */ var _seriesRange__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_275254__(/*! ../seriesRange */ "./dist/esm/series/seriesRange.js");
+/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_275254__(/*! ../seriesColors */ "./dist/esm/series/seriesColors.js");
 
 
 /******************************************************************************
@@ -74540,19 +74541,19 @@ function getColors(nodes, colors = []) {
 /*!***************************************************!*\
   !*** ./dist/esm/series/sunburst/sunburstLabel.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_278020__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_278062__) => {
 
 "use strict";
-__nested_webpack_require_278020__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_278020__.d(__webpack_exports__, {
+__nested_webpack_require_278062__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_278062__.d(__webpack_exports__, {
 /* harmony export */   "labelVisible": () => /* binding */ labelVisible,
 /* harmony export */   "labelTransform": () => /* binding */ labelTransform,
 /* harmony export */   "cropLabel": () => /* binding */ cropLabel
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_278020__(/*! core-js/modules/es.string.replace.js */ "core-js/modules/es.string.replace.js");
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_278020__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_278020__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_278020__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_278062__(/*! core-js/modules/es.string.replace.js */ "core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_278062__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_278062__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_278062__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
 
 
 /******************************************************************************
@@ -74594,16 +74595,16 @@ function cropLabel(d, targetWidth) {
 /*!****************************************************!*\
   !*** ./dist/esm/series/sunburst/sunburstSeries.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_280473__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_280515__) => {
 
 "use strict";
-__nested_webpack_require_280473__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_280473__.d(__webpack_exports__, {
+__nested_webpack_require_280515__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_280515__.d(__webpack_exports__, {
 /* harmony export */   "sunburstSeries": () => /* binding */ sunburstSeries
 /* harmony export */ });
-/* harmony import */ var _sunburstArc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_280473__(/*! ./sunburstArc */ "./dist/esm/series/sunburst/sunburstArc.js");
-/* harmony import */ var _sunburstLabel__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_280473__(/*! ./sunburstLabel */ "./dist/esm/series/sunburst/sunburstLabel.js");
-/* harmony import */ var _sunburstClick__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_280473__(/*! ./sunburstClick */ "./dist/esm/series/sunburst/sunburstClick.js");
+/* harmony import */ var _sunburstArc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_280515__(/*! ./sunburstArc */ "./dist/esm/series/sunburst/sunburstArc.js");
+/* harmony import */ var _sunburstLabel__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_280515__(/*! ./sunburstLabel */ "./dist/esm/series/sunburst/sunburstLabel.js");
+/* harmony import */ var _sunburstClick__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_280515__(/*! ./sunburstClick */ "./dist/esm/series/sunburst/sunburstClick.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74703,19 +74704,19 @@ function sunburstSeries() {
 /*!*************************************************!*\
   !*** ./dist/esm/series/treemap/treemapColor.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_284698__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_284740__) => {
 
 "use strict";
-__nested_webpack_require_284698__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_284698__.d(__webpack_exports__, {
+__nested_webpack_require_284740__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_284740__.d(__webpack_exports__, {
 /* harmony export */   "treeColor": () => /* binding */ treeColor
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_284698__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_284698__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_284698__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_284698__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _seriesRange__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_284698__(/*! ../seriesRange */ "./dist/esm/series/seriesRange.js");
-/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_284698__(/*! ../seriesColors */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_284740__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_284740__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_284740__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_284740__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _seriesRange__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_284740__(/*! ../seriesRange */ "./dist/esm/series/seriesRange.js");
+/* harmony import */ var _seriesColors__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_284740__(/*! ../seriesColors */ "./dist/esm/series/seriesColors.js");
 
 
 
@@ -74757,16 +74758,16 @@ function getColors(nodes, colors = []) {
 /*!****************************************************!*\
   !*** ./dist/esm/series/treemap/treemapControls.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_287781__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_287823__) => {
 
 "use strict";
-__nested_webpack_require_287781__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_287781__.d(__webpack_exports__, {
+__nested_webpack_require_287823__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_287823__.d(__webpack_exports__, {
 /* harmony export */   "parentControls": () => /* binding */ parentControls
 /* harmony export */ });
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_287781__(/*! ../../utils/utils */ "./dist/esm/utils/utils.js");
-/* harmony import */ var _html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_287781__(/*! ../../../html/parent-controls.html */ "./dist/html/parent-controls.html");
-/* harmony import */ var _html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_287781__.n(_html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_287823__(/*! ../../utils/utils */ "./dist/esm/utils/utils.js");
+/* harmony import */ var _html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_287823__(/*! ../../../html/parent-controls.html */ "./dist/html/parent-controls.html");
+/* harmony import */ var _html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_287823__.n(_html_parent_controls_html__WEBPACK_IMPORTED_MODULE_1__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74842,11 +74843,11 @@ function parentControls(container) {
 /*!*************************************************!*\
   !*** ./dist/esm/series/treemap/treemapLabel.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_290500__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_290542__) => {
 
 "use strict";
-__nested_webpack_require_290500__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_290500__.d(__webpack_exports__, {
+__nested_webpack_require_290542__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_290542__.d(__webpack_exports__, {
 /* harmony export */   "labelMapExists": () => /* binding */ labelMapExists,
 /* harmony export */   "toggleLabels": () => /* binding */ toggleLabels,
 /* harmony export */   "restoreLabels": () => /* binding */ restoreLabels,
@@ -74857,9 +74858,9 @@ __nested_webpack_require_290500__.r(__webpack_exports__);
 /* harmony export */   "selectVisibleNodes": () => /* binding */ selectVisibleNodes,
 /* harmony export */   "adjustLabelsThatOverflow": () => /* binding */ adjustLabelsThatOverflow
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_290500__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_290500__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_290500__(/*! ../../utils/utils */ "./dist/esm/utils/utils.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_290542__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_290542__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_290542__(/*! ../../utils/utils */ "./dist/esm/utils/utils.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -74973,15 +74974,15 @@ const textVisability = {
 /*!**************************************************!*\
   !*** ./dist/esm/series/treemap/treemapLayout.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_296758__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_296800__) => {
 
 "use strict";
-__nested_webpack_require_296758__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_296758__.d(__webpack_exports__, {
+__nested_webpack_require_296800__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_296800__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_296758__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_296758__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_296800__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_296800__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75004,20 +75005,20 @@ __nested_webpack_require_296758__.r(__webpack_exports__);
 /*!************************************************************!*\
   !*** ./dist/esm/series/treemap/treemapLevelCalculation.js ***!
   \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_298174__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_298216__) => {
 
 "use strict";
-__nested_webpack_require_298174__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_298174__.d(__webpack_exports__, {
+__nested_webpack_require_298216__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_298216__.d(__webpack_exports__, {
 /* harmony export */   "calculateSubTreeMap": () => /* binding */ calculateSubTreeMap,
 /* harmony export */   "calculateRootLevelMap": () => /* binding */ calculateRootLevelMap,
 /* harmony export */   "saveLabelMap": () => /* binding */ saveLabelMap
 /* harmony export */ });
-/* harmony import */ var _treemapSeries__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_298174__(/*! ./treemapSeries */ "./dist/esm/series/treemap/treemapSeries.js");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_298174__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_298174__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _treemapLayout__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_298174__(/*! ./treemapLayout */ "./dist/esm/series/treemap/treemapLayout.js");
-/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_298174__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
+/* harmony import */ var _treemapSeries__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_298216__(/*! ./treemapSeries */ "./dist/esm/series/treemap/treemapSeries.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_298216__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_298216__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _treemapLayout__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_298216__(/*! ./treemapLayout */ "./dist/esm/series/treemap/treemapLayout.js");
+/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_298216__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75135,21 +75136,21 @@ function calculateTextOpacities(nodesMerge, treemapLevel) {
 /*!**************************************************!*\
   !*** ./dist/esm/series/treemap/treemapSeries.js ***!
   \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_303965__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_304007__) => {
 
 "use strict";
-__nested_webpack_require_303965__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_303965__.d(__webpack_exports__, {
+__nested_webpack_require_304007__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_304007__.d(__webpack_exports__, {
 /* harmony export */   "nodeLevel": () => /* binding */ nodeLevel,
 /* harmony export */   "calcWidth": () => /* binding */ calcWidth,
 /* harmony export */   "calcHeight": () => /* binding */ calcHeight,
 /* harmony export */   "treemapSeries": () => /* binding */ treemapSeries
 /* harmony export */ });
-/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_303965__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
-/* harmony import */ var _treemapLayout__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_303965__(/*! ./treemapLayout */ "./dist/esm/series/treemap/treemapLayout.js");
-/* harmony import */ var _treemapTransitions__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_303965__(/*! ./treemapTransitions */ "./dist/esm/series/treemap/treemapTransitions.js");
-/* harmony import */ var _treemapControls__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_303965__(/*! ./treemapControls */ "./dist/esm/series/treemap/treemapControls.js");
-/* harmony import */ var _treemapLevelCalculation__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_303965__(/*! ./treemapLevelCalculation */ "./dist/esm/series/treemap/treemapLevelCalculation.js");
+/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_304007__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
+/* harmony import */ var _treemapLayout__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_304007__(/*! ./treemapLayout */ "./dist/esm/series/treemap/treemapLayout.js");
+/* harmony import */ var _treemapTransitions__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_304007__(/*! ./treemapTransitions */ "./dist/esm/series/treemap/treemapTransitions.js");
+/* harmony import */ var _treemapControls__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_304007__(/*! ./treemapControls */ "./dist/esm/series/treemap/treemapControls.js");
+/* harmony import */ var _treemapLevelCalculation__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_304007__(/*! ./treemapLevelCalculation */ "./dist/esm/series/treemap/treemapLevelCalculation.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75259,19 +75260,19 @@ function treemapSeries() {
 /*!*******************************************************!*\
   !*** ./dist/esm/series/treemap/treemapTransitions.js ***!
   \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_309280__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_309322__) => {
 
 "use strict";
-__nested_webpack_require_309280__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_309280__.d(__webpack_exports__, {
+__nested_webpack_require_309322__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_309322__.d(__webpack_exports__, {
 /* harmony export */   "returnToLevel": () => /* binding */ returnToLevel,
 /* harmony export */   "changeLevel": () => /* binding */ changeLevel
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_309280__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_309280__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _treemapSeries__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_309280__(/*! ./treemapSeries */ "./dist/esm/series/treemap/treemapSeries.js");
-/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_309280__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
-/* harmony import */ var _treemapLevelCalculation__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_309280__(/*! ./treemapLevelCalculation */ "./dist/esm/series/treemap/treemapLevelCalculation.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_309322__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_309322__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _treemapSeries__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_309322__(/*! ./treemapSeries */ "./dist/esm/series/treemap/treemapSeries.js");
+/* harmony import */ var _treemapLabel__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_309322__(/*! ./treemapLabel */ "./dist/esm/series/treemap/treemapLabel.js");
+/* harmony import */ var _treemapLevelCalculation__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_309322__(/*! ./treemapLevelCalculation */ "./dist/esm/series/treemap/treemapLevelCalculation.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75391,18 +75392,18 @@ const enableUserInteraction = (nodes, parentCtrls) => {
 /*!******************************************!*\
   !*** ./dist/esm/tooltip/generateHTML.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_316850__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_316892__) => {
 
 "use strict";
-__nested_webpack_require_316850__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_316850__.d(__webpack_exports__, {
+__nested_webpack_require_316892__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_316892__.d(__webpack_exports__, {
 /* harmony export */   "generateHtml": () => /* binding */ generateHtml
 /* harmony export */ });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_316850__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_316850__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _selectionData__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_316850__(/*! ./selectionData */ "./dist/esm/tooltip/selectionData.js");
-/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_316850__(/*! @finos/perspective/dist/esm/config */ "@finos/perspective/dist/esm/config");
-/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__nested_webpack_require_316850__.n(_finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_316892__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_316892__.n(d3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _selectionData__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_316892__(/*! ./selectionData */ "./dist/esm/tooltip/selectionData.js");
+/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_316892__(/*! @finos/perspective/dist/esm/config */ "@finos/perspective/dist/esm/config");
+/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__nested_webpack_require_316892__.n(_finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_2__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75438,19 +75439,19 @@ const formatNumber = value => value.toLocaleString(undefined, {
 /*!***************************************!*\
   !*** ./dist/esm/tooltip/nearbyTip.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_319409__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_319451__) => {
 
 "use strict";
-__nested_webpack_require_319409__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_319409__.d(__webpack_exports__, {
+__nested_webpack_require_319451__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_319451__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_319409__(/*! d3fc */ "d3fc");
-/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_319409__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_319409__(/*! ./tooltip */ "./dist/esm/tooltip/tooltip.js");
-/* harmony import */ var _series_seriesColors_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_319409__(/*! ../series/seriesColors.js */ "./dist/esm/series/seriesColors.js");
-/* harmony import */ var _data_findBest__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_319409__(/*! ../data/findBest */ "./dist/esm/data/findBest.js");
-/* harmony import */ var _selectionEvent__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_319409__(/*! ./selectionEvent */ "./dist/esm/tooltip/selectionEvent.js");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_319451__(/*! d3fc */ "d3fc");
+/* harmony import */ var d3fc__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_319451__.n(d3fc__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tooltip__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_319451__(/*! ./tooltip */ "./dist/esm/tooltip/tooltip.js");
+/* harmony import */ var _series_seriesColors_js__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_319451__(/*! ../series/seriesColors.js */ "./dist/esm/series/seriesColors.js");
+/* harmony import */ var _data_findBest__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_319451__(/*! ../data/findBest */ "./dist/esm/data/findBest.js");
+/* harmony import */ var _selectionEvent__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_319451__(/*! ./selectionEvent */ "./dist/esm/tooltip/selectionEvent.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75625,18 +75626,18 @@ __nested_webpack_require_319409__.r(__webpack_exports__);
 /*!*******************************************!*\
   !*** ./dist/esm/tooltip/selectionData.js ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_325292__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_325334__) => {
 
 "use strict";
-__nested_webpack_require_325292__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_325292__.d(__webpack_exports__, {
+__nested_webpack_require_325334__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_325334__.d(__webpack_exports__, {
 /* harmony export */   "toValue": () => /* binding */ toValue,
 /* harmony export */   "getGroupValues": () => /* binding */ getGroupValues,
 /* harmony export */   "getSplitValues": () => /* binding */ getSplitValues,
 /* harmony export */   "getDataValues": () => /* binding */ getDataValues
 /* harmony export */ });
-/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_325292__(/*! @finos/perspective/dist/esm/config */ "@finos/perspective/dist/esm/config");
-/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_325292__.n(_finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_325334__(/*! @finos/perspective/dist/esm/config */ "@finos/perspective/dist/esm/config");
+/* harmony import */ var _finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_325334__.n(_finos_perspective_dist_esm_config__WEBPACK_IMPORTED_MODULE_0__);
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75705,15 +75706,15 @@ function getDataValues(data, settings) {
 /*!********************************************!*\
   !*** ./dist/esm/tooltip/selectionEvent.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_328377__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_328419__) => {
 
 "use strict";
-__nested_webpack_require_328377__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_328377__.d(__webpack_exports__, {
+__nested_webpack_require_328419__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_328419__.d(__webpack_exports__, {
 /* harmony export */   "raiseEvent": () => /* binding */ raiseEvent,
 /* harmony export */   "selectionEvent": () => /* binding */ selectionEvent
 /* harmony export */ });
-/* harmony import */ var _selectionData__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_328377__(/*! ./selectionData */ "./dist/esm/tooltip/selectionData.js");
+/* harmony import */ var _selectionData__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_328419__(/*! ./selectionData */ "./dist/esm/tooltip/selectionData.js");
 /******************************************************************************
  *
  * Copyright (c) 2017, the Perspective Authors.
@@ -75770,23 +75771,23 @@ const selectionEvent = () => {
 /*!*************************************!*\
   !*** ./dist/esm/tooltip/tooltip.js ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_330487__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_330529__) => {
 
 "use strict";
-__nested_webpack_require_330487__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_330487__.d(__webpack_exports__, {
+__nested_webpack_require_330529__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_330529__.d(__webpack_exports__, {
 /* harmony export */   "tooltip": () => /* binding */ tooltip
 /* harmony export */ });
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_330487__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_330487__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_330487__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_330487__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _plugin_root__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_330487__(/*! ../plugin/root */ "./dist/esm/plugin/root.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_330487__(/*! ../utils/utils */ "./dist/esm/utils/utils.js");
-/* harmony import */ var _html_tooltip_html__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_330487__(/*! ../../html/tooltip.html */ "./dist/html/tooltip.html");
-/* harmony import */ var _html_tooltip_html__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__nested_webpack_require_330487__.n(_html_tooltip_html__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _generateHTML__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_330487__(/*! ./generateHTML */ "./dist/esm/tooltip/generateHTML.js");
-/* harmony import */ var _selectionEvent__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_330487__(/*! ./selectionEvent */ "./dist/esm/tooltip/selectionEvent.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_330529__(/*! core-js/modules/web.dom-collections.iterator.js */ "core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_330529__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_330529__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_330529__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _plugin_root__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_330529__(/*! ../plugin/root */ "./dist/esm/plugin/root.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_330529__(/*! ../utils/utils */ "./dist/esm/utils/utils.js");
+/* harmony import */ var _html_tooltip_html__WEBPACK_IMPORTED_MODULE_4__ = __nested_webpack_require_330529__(/*! ../../html/tooltip.html */ "./dist/html/tooltip.html");
+/* harmony import */ var _html_tooltip_html__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__nested_webpack_require_330529__.n(_html_tooltip_html__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _generateHTML__WEBPACK_IMPORTED_MODULE_5__ = __nested_webpack_require_330529__(/*! ./generateHTML */ "./dist/esm/tooltip/generateHTML.js");
+/* harmony import */ var _selectionEvent__WEBPACK_IMPORTED_MODULE_6__ = __nested_webpack_require_330529__(/*! ./selectionEvent */ "./dist/esm/tooltip/selectionEvent.js");
 
 
 /******************************************************************************
@@ -75938,11 +75939,11 @@ function hideTooltip(tooltipDiv) {
 /*!*********************************!*\
   !*** ./dist/esm/utils/utils.js ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_337226__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_337268__) => {
 
 "use strict";
-__nested_webpack_require_337226__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_337226__.d(__webpack_exports__, {
+__nested_webpack_require_337268__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_337268__.d(__webpack_exports__, {
 /* harmony export */   "areArraysEqualSimple": () => /* binding */ areArraysEqualSimple,
 /* harmony export */   "getOrCreateElement": () => /* binding */ getOrCreateElement,
 /* harmony export */   "isElementOverflowing": () => /* binding */ isElementOverflowing,
@@ -75993,20 +75994,20 @@ function isElementOverlapping(axis, immovableRect, elementRect, fuzz = 0) {
 /*!****************************************!*\
   !*** ./dist/esm/zoom/zoomableChart.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_339840__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_339882__) => {
 
 "use strict";
-__nested_webpack_require_339840__.r(__webpack_exports__);
-/* harmony export */ __nested_webpack_require_339840__.d(__webpack_exports__, {
+__nested_webpack_require_339882__.r(__webpack_exports__);
+/* harmony export */ __nested_webpack_require_339882__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_339840__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
-/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_339840__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_339840__(/*! d3 */ "d3");
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_339840__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_339840__(/*! ../utils/utils */ "./dist/esm/utils/utils.js");
-/* harmony import */ var _html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_339840__(/*! ../../html/zoom-controls.html */ "./dist/html/zoom-controls.html");
-/* harmony import */ var _html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__nested_webpack_require_339840__.n(_html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_339882__(/*! core-js/modules/es.array.reduce.js */ "core-js/modules/es.array.reduce.js");
+/* harmony import */ var core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nested_webpack_require_339882__.n(core_js_modules_es_array_reduce_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_339882__(/*! d3 */ "d3");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nested_webpack_require_339882__.n(d3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __nested_webpack_require_339882__(/*! ../utils/utils */ "./dist/esm/utils/utils.js");
+/* harmony import */ var _html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3__ = __nested_webpack_require_339882__(/*! ../../html/zoom-controls.html */ "./dist/html/zoom-controls.html");
+/* harmony import */ var _html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__nested_webpack_require_339882__.n(_html_zoom_controls_html__WEBPACK_IMPORTED_MODULE_3__);
 
 
 /******************************************************************************
@@ -76325,7 +76326,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
-/******/ 	function __nested_webpack_require_350394__(moduleId) {
+/******/ 	function __nested_webpack_require_350436__(moduleId) {
 /******/ 		// Check if module is in cache
 /******/ 		if(__webpack_module_cache__[moduleId]) {
 /******/ 			return __webpack_module_cache__[moduleId].exports;
@@ -76338,7 +76339,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_350394__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_350436__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -76348,11 +76349,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__nested_webpack_require_350394__.n = (module) => {
+/******/ 		__nested_webpack_require_350436__.n = (module) => {
 /******/ 			var getter = module && module.__esModule ?
 /******/ 				() => module['default'] :
 /******/ 				() => module;
-/******/ 			__nested_webpack_require_350394__.d(getter, { a: getter });
+/******/ 			__nested_webpack_require_350436__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
@@ -76360,9 +76361,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__nested_webpack_require_350394__.d = (exports, definition) => {
+/******/ 		__nested_webpack_require_350436__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
-/******/ 				if(__nested_webpack_require_350394__.o(definition, key) && !__nested_webpack_require_350394__.o(exports, key)) {
+/******/ 				if(__nested_webpack_require_350436__.o(definition, key) && !__nested_webpack_require_350436__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
@@ -76371,13 +76372,13 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__nested_webpack_require_350394__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 		__nested_webpack_require_350436__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__nested_webpack_require_350394__.r = (exports) => {
+/******/ 		__nested_webpack_require_350436__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
@@ -76389,7 +76390,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_gradient_parser__;
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __nested_webpack_require_350394__("./dist/esm/index.js");
+/******/ 	return __nested_webpack_require_350436__("./dist/esm/index.js");
 /******/ })()
 ;
 });
@@ -76994,7 +76995,7 @@ async function configureRegularTable(regular, model) {
   await regular.draw();
 }
 
-var css_248z = "@import url(\"https://fonts.googleapis.com/css?family=Open+Sans\");@import url(\"https://fonts.googleapis.com/css?family=Material+Icons\");@import url(\"https://fonts.googleapis.com/css?family=Roboto+Mono\");regular-table{padding-top:12px;padding-left:12px;padding-bottom:0;padding-right:0;scrollbar-color:transparent transparent;scrollbar-width:thin;outline:none}regular-table:hover{scrollbar-color:rgba(0,0,0,0.3) transparent}regular-table{font-family:\"Open Sans\"}regular-table div[tabindex]{outline:none}regular-table > div{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden}regular-table th{text-align:center}regular-table thead tr:not(:last-child) th{overflow:hidden;max-width:0px}regular-table thead tr:last-child .rt-float,\nregular-table tbody .rt-float{text-align:right}regular-table thead .rt-integer,\nregular-table tbody .rt-integer{text-align:right}regular-table tbody th{text-align:left}regular-table span.rt-tree-container{display:flex;align-items:center;height:100%}regular-table thead .rt-string,\nregular-table tbody .rt-string,\nregular-table thead .rt-date,\nregular-table tbody .rt-date,\nregular-table thead .rt-datetime,\nregular-table tbody .rt-datetime{text-align:left}regular-table thead tr:last-child th{border-bottom:1px solid #ddd}regular-table th{position:relative}regular-table tr th span.rt-tree-group{margin-left:5px;margin-right:15px;border-left:1px solid #eee;height:100%}regular-table td,\nregular-table th{white-space:nowrap;font-size:12px;padding-right:5px;padding-left:5px;padding-top:0px;padding-bottom:0px;height:19px}regular-table tr:hover td{background:#eee;opacity:1}regular-table tr:hover{color:#333}regular-table table *{box-sizing:border-box}regular-table table{position:absolute;overflow:hidden;color:#666;outline:none}regular-table span.rt-row-header-icon{color:#AAA;padding-right:4px;font-family:\"Material Icons\"}regular-table span.rt-column-header-icon{font-size:10px;padding-left:3px;display:inline-block;width:10px;font-family:\"Material Icons\"}regular-table span.rt-row-header-icon:hover{color:#1a7da1;text-shadow:0px 0px 3px #1a7da1}regular-table .rt-selected td{background-color:#eee}regular-table .rt-cell-clip{overflow:hidden;text-overflow:ellipsis}regular-table td span.rt-group-name,\nregular-table th span.rt-group-name{margin-right:-5px;padding-right:5px;padding-left:8px;flex:1;height:100%}regular-table th span.rt-group-name{text-align:left}regular-table td th span.rt-group-leaf,\nregular-table th span.rt-group-leaf{margin-left:16px;height:100%}regular-table .rt-column-resize{height:100%;width:10px;position:absolute;top:0;right:0;cursor:col-resize}regular-table::-webkit-scrollbar,\nregular-table::-webkit-scrollbar-corner{background-color:transparent;height:12px;width:12px}regular-table::-webkit-scrollbar-thumb{background-clip:content-box;background-color:rgba(0,0,0,0);border-radius:5px}regular-table::-webkit-scrollbar-thumb:horizontal{border-bottom:2px solid transparent;border-top:2px solid transparent}regular-table::-webkit-scrollbar-thumb:vertical{border-left:2px solid transparent;border-right:2px solid transparent}regular-table:hover::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,0.15)}regular-table::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,0.3)}.psp-header-border:not(.psp-is-top):not(.psp-header-leaf){box-shadow:1px 0px var(--pv-divider--color,#EAEDEF)}.psp-header-group{box-shadow:0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-is-top{box-shadow:5px 4px 0px -4px var(--pv-divider--color,#EAEDEF)}.psp-is-top.psp-header-group:not(.psp-header-group-corner){box-shadow:5px 4px 0px -4px var(--pv-divider--color,#EAEDEF),0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-header-border.psp-header-group:not(.psp-is-top):not(.psp-header-group-corner){box-shadow:1px 0px var(--pv-divider--color,#EAEDEF),0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-header-leaf.psp-header-border{box-shadow:5px -4px 0px -4px var(--pv-divider--color,#EAEDEF)}tr:only-child th{box-shadow:none!important}regular-table tbody tr:hover th.psp-tree-leaf:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover th.psp-tree-label:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover td:not(.psp-row-selected):not(.psp-row-subselected){border-color:var(--rt-hover--border-color,#C5C9D0)!important;background-color:transparent;box-shadow:0px -2px 0px rgba(0,0,0,0.05),0px -4px 0px rgba(0,0,0,0.01),0px 1px 0px var(--rt-hover--border-color,#C5C9D0),0px 3px 0px rgba(0,0,0,0.05),0px 5px 0px rgba(0,0,0,0.01)}regular-table tbody tr:hover + tr th.psp-tree-leaf:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover + tr th.psp-tree-label:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover + tr td:not(.psp-row-selected):not(.psp-row-subselected){border-top-color:transparent}regular-table tbody tr th:first-child:not(:empty),\nregular-table tbody tr th:first-child:empty + th:not(:empty),\nregular-table tbody tr th:first-child:empty ~ th:empty + th:not(:empty),\nregular-table tbody tr td:first-child{border-left-width:1px;border-left-color:transparent}regular-table tbody tr th:last-child,\nregular-table tbody tr td:last-child{border-right-width:1px;border-right-color:transparent}regular-table tbody tr:hover{color:#161616}regular-table tbody tr:hover th:first-child:not(:empty),\nregular-table tbody tr:hover th:first-child:empty + th:not(:empty),\nregular-table tbody tr:hover th:first-child:empty ~ th:empty + th:not(:empty),\nregular-table tbody tr:hover td:first-child{border-left-color:var(--rt-hover--border-color,#C5C9D0)!important}regular-table tbody tr:hover th:last-child,\nregular-table tbody tr:hover td:last-child{border-right-color:var(--rt-hover--border-color,#C5C9D0)!important}perspective-viewer[settings] regular-table .psp-header-leaf{height:36px;vertical-align:top;padding-top:2px}perspective-viewer[settings] regular-table .psp-header-leaf:not(.psp-header-corner):before{font-family:\"Material Icons\";content:\"menu\";position:absolute;width:calc(100% - 8px);left:5px;bottom:0px;color:var(--inactive--color,#B4B7BE)}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-enabled:not(.psp-header-corner):before{color:inherit;cursor:pointer}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-open:not(.psp-header-corner){pointer-events:none}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-open:not(.psp-header-corner):before{content:\"expand_less\"}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-enabled:hover:before{color:#338DCD}perspective-viewer[settings] regular-table .psp-header-leaf .rt-column-resize{height:18px}.psp-row-selected,\n:hover .psp-row-selected,\n:hover th.psp-tree-leaf.psp-row-selected,\n:hover th.psp-tree-label.psp-row-selected{color:white!important;background-color:#EA7319!important;border-color:#EA7319!important}.psp-row-selected.psp-tree-label:not(:hover):before{color:white}.psp-row-subselected,\n:hover .psp-row-subselected,\n:hover th.psp-tree-leaf.psp-row-subselected,\n:hover th.psp-tree-label.psp-row-subselected{background:rgba(234,115,25,0.2)!important}.psp-error{color:red}td:focus{outline:#666;outline-style:dotted;outline-width:1px}perspective-viewer.dragging regular-table{pointer-events:none}.psp-header-border:last-child{border-right-width:0px}.psp-header-sort-desc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_downward\"}.psp-header-sort-asc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_upward\"}.psp-header-sort-col-desc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_back\"}.psp-header-sort-col-asc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_forward\"}tbody th:last-of-type{border-right:1px solid #eaedef;overflow:hidden;text-overflow:ellipsis}tbody th:empty{background-image:linear-gradient(to right,transparent 9px,#eee 10px,transparent 11px);background-repeat:no-repeat;min-width:20px;max-width:20px;pointer-events:none}.psp-tree-label{max-width:0px;min-width:0px}.psp-tree-label:before{color:#ccc;font-family:\"Material Icons\";padding-right:11px;vertical-align:-1px}.psp-tree-label-expand:before{content:\"add\"}.psp-tree-label-collapse:before{content:\"remove\"}.psp-tree-label:hover:before{color:#338DCD;text-shadow:0px 0px 5px #338DCD}regular-table thead tr:last-child th{border-bottom-width:0px}.psp-tree-leaf{padding-left:24px}.psp-align-right{text-align:right}.psp-align-left{text-align:left}.psp-positive:not(:focus){color:var(--rt-pos-cell--color,#338DCD)}.psp-negative:not(:focus){color:var(--rt-neg-cell--color,#FF5942)}regular-table table{user-select:none;color:#161616}regular-table table th{font-weight:400}regular-table table td,\nregular-table table th{height:23px}regular-table table .psp-header-leaf{border-bottom-width:0px}regular-table table td,\nregular-table table th.psp-tree-label,\nregular-table table th.psp-tree-label,\nregular-table table th.psp-tree-leaf,\nregular-table table tbody tr:first-child th{border:0px solid #eaedef;border-top-width:1px}regular-table table tbody th:empty{background-position:0px -10px}";
+var css_248z = "@import url(\"https://fonts.googleapis.com/css?family=Open+Sans\");@import url(\"https://fonts.googleapis.com/css?family=Material+Icons\");@import url(\"https://fonts.googleapis.com/css?family=Roboto+Mono\");regular-table{padding-top:12px;padding-left:12px;padding-bottom:0;padding-right:0;scrollbar-color:transparent transparent;scrollbar-width:thin;outline:none}regular-table:hover{scrollbar-color:rgba(0,0,0,0.3) transparent}regular-table{font-family:\"Open Sans\"}regular-table div[tabindex]{outline:none}regular-table > div{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden}regular-table th{text-align:center}regular-table thead tr:not(:last-child) th{overflow:hidden;max-width:0px}regular-table thead tr:last-child .rt-float,\nregular-table tbody .rt-float{text-align:right}regular-table thead .rt-integer,\nregular-table tbody .rt-integer{text-align:right}regular-table tbody th{text-align:left}regular-table span.rt-tree-container{display:flex;align-items:center;height:100%}regular-table thead .rt-string,\nregular-table tbody .rt-string,\nregular-table thead .rt-date,\nregular-table tbody .rt-date,\nregular-table thead .rt-datetime,\nregular-table tbody .rt-datetime{text-align:left}regular-table thead tr:last-child th{border-bottom:1px solid #ddd}regular-table th{position:relative}regular-table tr th span.rt-tree-group{margin-left:5px;margin-right:15px;border-left:1px solid #eee;height:100%}regular-table td,\nregular-table th{white-space:nowrap;font-size:12px;padding-right:5px;padding-left:5px;padding-top:0px;padding-bottom:0px;height:19px}regular-table tr:hover td{background:#eee;opacity:1}regular-table tr:hover{color:#333}regular-table table *{box-sizing:border-box}regular-table table{position:absolute;overflow:hidden;color:#666;outline:none}regular-table span.rt-row-header-icon{color:#AAA;padding-right:4px;font-family:\"Material Icons\"}regular-table span.rt-column-header-icon{font-size:10px;padding-left:3px;display:inline-block;width:10px;font-family:\"Material Icons\"}regular-table span.rt-row-header-icon:hover{color:#1a7da1;text-shadow:0px 0px 3px #1a7da1}regular-table .rt-selected td{background-color:#eee}regular-table .rt-cell-clip{overflow:hidden;text-overflow:ellipsis}regular-table td span.rt-group-name,\nregular-table th span.rt-group-name{margin-right:-5px;padding-right:5px;padding-left:8px;flex:1;height:100%}regular-table th span.rt-group-name{text-align:left}regular-table td th span.rt-group-leaf,\nregular-table th span.rt-group-leaf{margin-left:16px;height:100%}regular-table .rt-column-resize{height:100%;width:10px;position:absolute;top:0;right:0;cursor:col-resize}regular-table::-webkit-scrollbar,\nregular-table::-webkit-scrollbar-corner{background-color:transparent;height:12px;width:12px}regular-table::-webkit-scrollbar-thumb{background-clip:content-box;background-color:rgba(0,0,0,0);border-radius:5px}regular-table::-webkit-scrollbar-thumb:horizontal{border-bottom:2px solid transparent;border-top:2px solid transparent}regular-table::-webkit-scrollbar-thumb:vertical{border-left:2px solid transparent;border-right:2px solid transparent}regular-table:hover::-webkit-scrollbar-thumb{background-color:rgba(0,0,0,0.15)}regular-table::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,0.3)}.psp-header-border:not(.psp-is-top):not(.psp-header-leaf){box-shadow:1px 0px var(--pv-divider--color,#EAEDEF)}.psp-header-group{box-shadow:0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-is-top{box-shadow:5px 4px 0px -4px var(--pv-divider--color,#EAEDEF)}.psp-is-top.psp-header-group:not(.psp-header-group-corner){box-shadow:5px 4px 0px -4px var(--pv-divider--color,#EAEDEF),0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-header-border.psp-header-group:not(.psp-is-top):not(.psp-header-group-corner){box-shadow:1px 0px var(--pv-divider--color,#EAEDEF),0px 10px 0 -9px var(--pv-divider--color,#EAEDEF)}.psp-header-leaf.psp-header-border{box-shadow:5px -4px 0px -4px var(--pv-divider--color,#EAEDEF)}tr:only-child th{box-shadow:none!important}regular-table tbody tr:hover th.psp-tree-leaf:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover th.psp-tree-label:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover td:not(.psp-row-selected):not(.psp-row-subselected){border-color:var(--rt-hover--border-color,#C5C9D0)!important;background-color:transparent;box-shadow:0px -2px 0px rgba(0,0,0,0.05),0px -4px 0px rgba(0,0,0,0.01),0px 1px 0px var(--rt-hover--border-color,#C5C9D0),0px 3px 0px rgba(0,0,0,0.05),0px 5px 0px rgba(0,0,0,0.01)}regular-table tbody tr:hover + tr th.psp-tree-leaf:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover + tr th.psp-tree-label:not(.psp-row-selected):not(.psp-row-subselected),\nregular-table tbody tr:hover + tr td:not(.psp-row-selected):not(.psp-row-subselected){border-top-color:transparent}regular-table tbody tr th:first-child:not(:empty),\nregular-table tbody tr th:first-child:empty + th:not(:empty),\nregular-table tbody tr th:first-child:empty ~ th:empty + th:not(:empty),\nregular-table tbody tr td:first-child{border-left-width:1px;border-left-color:transparent}regular-table tbody tr th:last-child,\nregular-table tbody tr td:last-child{border-right-width:1px;border-right-color:transparent}regular-table tbody tr:hover{color:#161616}regular-table tbody tr:hover th:first-child:not(:empty),\nregular-table tbody tr:hover th:first-child:empty + th:not(:empty),\nregular-table tbody tr:hover th:first-child:empty ~ th:empty + th:not(:empty),\nregular-table tbody tr:hover td:first-child{border-left-color:var(--rt-hover--border-color,#C5C9D0)!important}regular-table tbody tr:hover th:last-child,\nregular-table tbody tr:hover td:last-child{border-right-color:var(--rt-hover--border-color,#C5C9D0)!important}perspective-viewer[settings] regular-table .psp-header-leaf{height:36px;vertical-align:top;padding-top:2px}perspective-viewer[settings] regular-table .psp-header-leaf:not(.psp-header-corner):before{font-family:\"Material Icons\";content:\"menu\";position:absolute;width:calc(100% - 8px);left:5px;bottom:0px;color:var(--inactive--color,#B4B7BE)}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-enabled:not(.psp-header-corner):before{color:inherit;cursor:pointer}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-open:not(.psp-header-corner){pointer-events:none}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-open:not(.psp-header-corner):before{content:\"expand_less\"}perspective-viewer[settings] regular-table .psp-header-leaf.psp-menu-enabled:hover:before{color:#338DCD}perspective-viewer[settings] regular-table .psp-header-leaf .rt-column-resize{height:18px}.psp-row-selected,\n:hover .psp-row-selected,\n:hover th.psp-tree-leaf.psp-row-selected,\n:hover th.psp-tree-label.psp-row-selected{color:white!important;background-color:#EA7319!important;border-color:#EA7319!important}.psp-row-selected.psp-tree-label:not(:hover):before{color:white}.psp-row-subselected,\n:hover .psp-row-subselected,\n:hover th.psp-tree-leaf.psp-row-subselected,\n:hover th.psp-tree-label.psp-row-subselected{background:rgba(234,115,25,0.2)!important}.psp-error{color:red}td:focus{outline:#666;outline-style:dotted;outline-width:1px}perspective-viewer.dragging regular-table{pointer-events:none}.psp-header-border:last-child{border-right-width:0px}.psp-header-sort-desc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_downward\"}.psp-header-sort-asc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_upward\"}.psp-header-sort-col-desc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_back\"}.psp-header-sort-col-asc:after{font-family:\"Material Icons\";font-size:10px;content:\"arrow_forward\"}tbody th:last-of-type{border-right:1px solid #eaedef;overflow:hidden;text-overflow:ellipsis}tbody th:empty{background-image:linear-gradient(to right,transparent 9px,#eee 10px,transparent 11px);background-repeat:no-repeat;min-width:20px;max-width:20px;pointer-events:none}.psp-tree-label{max-width:0px;min-width:0px}.psp-tree-label:before{color:#ccc;font-family:\"Material Icons\";padding-right:11px;vertical-align:-1px}.psp-tree-label-expand:before{content:\"add\"}.psp-tree-label-collapse:before{content:\"remove\"}.psp-tree-label:hover:before{color:#338DCD;text-shadow:0px 0px 5px #338DCD}regular-table thead tr:last-child th{border-bottom-width:0px}.psp-tree-leaf{padding-left:24px}.psp-align-right{text-align:right}.psp-align-left{text-align:left}.psp-positive:not(:focus){color:var(--rt-pos-cell--color,#338DCD)}.psp-negative:not(:focus){color:var(--rt-neg-cell--color,#FF5942)}regular-table table{user-select:none;color:#161616;border-collapse:separate}regular-table table th{font-weight:400}regular-table table td,\nregular-table table th{border-color:#eaedef;height:23px}regular-table table .psp-header-leaf{border-bottom-width:0px}regular-table table td,\nregular-table table th.psp-tree-label,\nregular-table table th.psp-tree-label,\nregular-table table th.psp-tree-leaf,\nregular-table table tbody tr:first-child th{border-style:solid;border-width:0px;border-top-width:1px}regular-table table tbody th:empty{background-position:0px -10px}";
 
 /******************************************************************************
  *
