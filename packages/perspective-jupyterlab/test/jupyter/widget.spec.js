@@ -22,17 +22,6 @@ const default_body = async page => {
 utils.with_jupyterlab(process.env.__JUPYTERLAB_PORT__, () => {
     describe.jupyter(
         () => {
-            /**
-             * For some reason, the first load of the Jupyter page always
-             * results in a white screen that refuses to load any further,
-             * and subsequent loads are successful. It is painful having to
-             * wait for Jupyterlab resources to load, but there is not much
-             * we can do about it.
-             */
-            test.jupyterlab("Setup", [], async page => {
-                await page.waitForTimeout(5000);
-            });
-
             test.jupyterlab("Loads a table", [["table = perspective.Table(arrow_data)\nw =perspective.PerspectiveWidget(table, columns=['f64', 'str', 'datetime'])"], ["w"]], async page => {
                 const viewer = await default_body(page);
 
@@ -62,33 +51,33 @@ utils.with_jupyterlab(process.env.__JUPYTERLAB_PORT__, () => {
                 expect(num_columns).toEqual(2);
             });
 
-            test.jupyterlab("Sets row pivots", [["table = perspective.Table(arrow_data)\n", "w = perspective.PerspectiveWidget(table)"], ["w"], ["w.row_pivots = ['datetime', 'str']"]], async page => {
-                const viewer = await default_body(page);
+            // test.jupyterlab("Sets row pivots", [["table = perspective.Table(arrow_data)\n", "w = perspective.PerspectiveWidget(table)"], ["w"], ["w.row_pivots = ['datetime', 'str']"]], async page => {
+            //     const viewer = await default_body(page);
 
-                const num_columns = await viewer.evaluate(async viewer => {
-                    const tbl = viewer.querySelector("regular-table");
-                    return tbl.querySelector("thead tr").childElementCount;
-                });
+            //     const num_columns = await viewer.evaluate(async viewer => {
+            //         const tbl = viewer.querySelector("regular-table");
+            //         return tbl.querySelector("thead tr").childElementCount;
+            //     });
 
-                expect(num_columns).toEqual(14);
+            //     expect(num_columns).toEqual(14);
 
-                const num_rows = await viewer.evaluate(async viewer => {
-                    const tbl = viewer.querySelector("regular-table");
-                    return tbl.querySelectorAll("tbody tr").length;
-                });
+            //     const num_rows = await viewer.evaluate(async viewer => {
+            //         const tbl = viewer.querySelector("regular-table");
+            //         return tbl.querySelectorAll("tbody tr").length;
+            //     });
 
-                // 2 levels of pivots, 5 rows each, plus total row
-                expect(num_rows).toEqual(11);
-            });
+            //     // 2 levels of pivots, 5 rows each, plus total row
+            //     expect(num_rows).toEqual(11);
+            // });
 
-            test.jupyterlab("Sets column pivots", [["table = perspective.Table(arrow_data)\n", "w = perspective.PerspectiveWidget(table)"], ["w"], ["w.column_pivots = ['str']"]], async page => {
-                const viewer = await default_body(page);
-                const num_headers = await viewer.evaluate(async viewer => {
-                    const tbl = viewer.querySelector("regular-table");
-                    return tbl.querySelector("thead").childElementCount;
-                });
-                expect(num_headers).toEqual(2);
-            });
+            // test.jupyterlab("Sets column pivots", [["table = perspective.Table(arrow_data)\n", "w = perspective.PerspectiveWidget(table)"], ["w"], ["w.column_pivots = ['str']"]], async page => {
+            //     const viewer = await default_body(page);
+            //     const num_headers = await viewer.evaluate(async viewer => {
+            //         const tbl = viewer.querySelector("regular-table");
+            //         return tbl.querySelector("thead").childElementCount;
+            //     });
+            //     expect(num_headers).toEqual(2);
+            // });
 
             // test.jupyterlab(
             //     "Sets row and column pivots",

@@ -10,20 +10,16 @@
 const {bash, execute, getarg, docker, execute_throw} = require("./script_utils.js");
 const minimatch = require("minimatch");
 const fs = require("fs");
-const path = require("path");
 
 const PACKAGE = process.env.PACKAGE;
 const DEBUG_FLAG = getarg("--debug") ? "" : "--silent";
 const IS_INSIDE_PUPPETEER = !!getarg("--private-puppeteer");
 const IS_WRITE = !!getarg("--write") || process.env.WRITE_TESTS;
-console.log("path", path.join(process.cwd(), "node_modules", "puppeteer"));
-const IS_LOCAL_PUPPETEER = fs.existsSync(path.join(process.cwd(), "node_modules", "puppeteer"));
+const IS_LOCAL_PUPPETEER = fs.existsSync("node_modules/puppeteer");
 
 // Unfortunately we have to handle parts of the Jupyter test case here,
 // as the Jupyter server needs to be run outside of the main Jest process.
 const IS_JUPYTER = getarg("--jupyter") && minimatch("perspective-jupyterlab", PACKAGE);
-
-console.log("IS_LOCAL", IS_LOCAL_PUPPETEER, "IS_JLAB", IS_JUPYTER);
 
 if (IS_WRITE) {
     console.log("-- Running the test suite in Write mode");
@@ -67,6 +63,7 @@ function jest_all() {
  */
 function jest_single(cmd) {
     console.log(`-- Running "${PACKAGE}" test suite`);
+    const RUN_IN_BAND = getarg("--interactive") || IS_JUPYTER ? "--runInBand" : "";
     return bash`
         PSP_SATURATE=${!!getarg("--saturate")}
         PSP_PAUSE_ON_FAILURE=${!!getarg("--interactive")}
@@ -80,7 +77,7 @@ function jest_single(cmd) {
         -- 
         yarn ${cmd ? cmd : "test:run"}
         ${DEBUG_FLAG}
-        ${getarg("--interactive") && "--runInBand"}
+        ${RUN_IN_BAND}
         --testNamePattern="${get_regex()}"`;
 }
 

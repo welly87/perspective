@@ -92,16 +92,6 @@ test.jupyterlab = async (name, cells, body, args = {}) => {
 };
 
 module.exports = {
-    restart_kernel: async page => {
-        await page.waitForSelector(".p-Widget", {visible: true});
-        await page.waitForSelector(".jp-NotebookPanel-toolbar");
-        await page.click(".jp-NotebookPanel-toolbar .jp-Button[title='Restart the kernel']");
-    },
-    execute_cell: async page => {
-        await page.waitForSelector(".p-Widget", {visible: true});
-        await page.waitForSelector(".jp-NotebookPanel-toolbar");
-        await page.click(".jp-NotebookPanel-toolbar .jp-Button[title='Run the selected cells and advance']");
-    },
     execute_all_cells: async page => {
         await page.waitForFunction(async () => !!document.title);
         await page.waitForSelector(".p-Widget", {visible: true});
