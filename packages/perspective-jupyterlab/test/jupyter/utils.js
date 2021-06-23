@@ -99,12 +99,14 @@ module.exports = {
 
         // give jlab a second to render - otherwise the attempts to click will
         // be flaky and work erratically.
-        await page.waitForTimeout(1000);
+        await page.waitForTimeout(2500);
 
         // Use our custom keyboard shortcut to run all cells
         await page.keyboard.press("R");
         await page.keyboard.press("R");
 
         await page.evaluate(() => (document.scrollTop = 0));
+
+        await page.waitForTimeout(2500);
     }
 };

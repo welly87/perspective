@@ -168,13 +168,5 @@ try {
     }
 } catch (e) {
     console.log(e.message);
-
-    // If we are running Jupyterlab tests, need to clean up the process if
-    // the tests error for any reason.
-    if (IS_JUPYTER && IS_LOCAL_PUPPETEER) {
-        console.log("-- Cleaning up Jupyterlab process after test error...");
-        execute`pkill -f "jupyter-lab --no-browser"`;
-    }
-
     process.exit(1);
 }

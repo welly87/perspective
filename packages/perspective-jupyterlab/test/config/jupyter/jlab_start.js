@@ -19,7 +19,7 @@ const PACKAGE_ROOT = path.join(__dirname, "..", "..", "..");
  */
 const kill_jlab = () => {
     console.log("-- Cleaning up Jupyterlab process");
-    execute`pkill -f "jupyter-lab --no-browser --port=${process.env.__JUPYTERLAB_PORT__}"`;
+    execute`ps aux | grep -i '[j]upyter-lab --no-browser' | awk '{print $2}' | xargs kill -9 && echo "[perspective-jupyterlab] JupyterLab process terminated"`;
 };
 
 exports.kill_jlab = kill_jlab;
@@ -62,6 +62,8 @@ exports.start_jlab = function() {
         // Does not alter the global env, only the env for this process
         process.env.JUPYTER_CONFIG_DIR = path.join(PACKAGE_ROOT, "test", "config", "jupyter");
         process.env.JUPYTERLAB_SETTINGS_DIR = path.join(PACKAGE_ROOT, "test", "config", "jupyter", "user_settings");
+
+        console.log(process.env.JUPYTER_CONFIG_DIR, process.env.JUPYTERLAB_SETTINGS_DIR);
 
         // Start jupyterlab with a root to dist/umd where the notebooks will be.
         process.chdir(path.join(PACKAGE_ROOT, "dist", "umd"));

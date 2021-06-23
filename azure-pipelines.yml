@@ -486,7 +486,16 @@ jobs:
     - bash: yarn jlab_link
       displayName: "Link local Perspective to Jupyterlab"
 
+    - bash: jupyter lab paths && jupyter labextension list
+      displayName: "Debug"
+
     - bash: yarn test_js --jupyter --debug
       displayName: "Run Jupyterlab tests"
       env:
         PACKAGE: perspective-jupyterlab
+
+    - task: PublishPipelineArtifact@1
+      condition: succeededOrFailed()
+      inputs:
+        targetPath: '$(System.DefaultWorkingDirectory)/packages/perspective-jupyterlab/screenshots/'
+        artifactName: "perspective-jupyterlab-screenshots-$(Build.BuildNumber)"

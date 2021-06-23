@@ -7,23 +7,48 @@
  *
  */
 
+const fs = require("fs");
 const path = require("path");
 const utils = require("@finos/perspective-test");
 const {execute_all_cells} = require("./utils");
 
-const default_body = async page => {
+let dir_name = path.join(__dirname, "..", "..", "screenshots");
+
+if (!fs.existsSync(dir_name)) {
+    utils.mkdirSyncRec(dir_name);
+}
+
+const default_body = async (name, page) => {
+    console.log(name, "BEFORE EXECUTE");
     await execute_all_cells(page);
+    console.log(name, "AFTER EXECUTE");
+    await page.waitForTimeout(10000);
+    const screenshot = await page.screenshot({fullPage: true});
+    fs.writeFileSync(path.join(dir_name, name) + ".png", screenshot);
+    console.log(name, "WAITING FOR VIEWER");
     const viewer = await page.waitForSelector(".jp-OutputArea-output perspective-viewer:not([updating])", {visible: true});
-    await page.waitForTimeout(1000);
-    await viewer.evaluate(async viewer => await viewer.flush());
+    console.log(name, "found viewer!");
+    await page.waitForTimeout(5000);
+    // await viewer.evaluate(async viewer => await viewer.flush());
     return viewer;
 };
 
 utils.with_jupyterlab(process.env.__JUPYTERLAB_PORT__, () => {
     describe.jupyter(
         () => {
+            /**
+             * For some reason, the first load of the Jupyter page always
+             * results in a white screen that refuses to load any further,
+             * and subsequent loads are successful. It is painful having to
+             * wait for Jupyterlab resources to load, but there is not much
+             * we can do about it.
+            //  */
+            test.jupyterlab("Setup", [], async page => {
+                await page.waitForTimeout(5000);
+            });
+
             test.jupyterlab("Loads a table", [["table = perspective.Table(arrow_data)\nw =perspective.PerspectiveWidget(table, columns=['f64', 'str', 'datetime'])"], ["w"]], async page => {
-                const viewer = await default_body(page);
+                const viewer = await default_body("loads_table", page);
 
                 const num_columns = await viewer.evaluate(async viewer => {
                     const tbl = viewer.querySelector("regular-table");
@@ -41,7 +66,7 @@ utils.with_jupyterlab(process.env.__JUPYTERLAB_PORT__, () => {
             });
 
             test.jupyterlab("Sets columns", [["table = perspective.Table(arrow_data)\n", "w = perspective.PerspectiveWidget(table)"], ["w"], ["w.columns = ['i8', 'f64']"]], async page => {
-                const viewer = await default_body(page);
+                const viewer = await default_body("sets_columns", page);
 
                 const num_columns = await viewer.evaluate(async viewer => {
                     const tbl = viewer.querySelector("regular-table");
