@@ -61,6 +61,7 @@ exports.start_jlab = function() {
     try {
         // Does not alter the global env, only the env for this process
         process.env.JUPYTER_CONFIG_DIR = path.join(PACKAGE_ROOT, "test", "config", "jupyter");
+        process.env.JUPYTERLAB_SETTINGS_DIR = path.join(PACKAGE_ROOT, "test", "config", "jupyter", "user_settings");
 
         // Start jupyterlab with a root to dist/umd where the notebooks will be.
         process.chdir(path.join(PACKAGE_ROOT, "dist", "umd"));

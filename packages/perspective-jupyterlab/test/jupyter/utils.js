@@ -101,9 +101,10 @@ module.exports = {
         // be flaky and work erratically.
         await page.waitForTimeout(1000);
 
-        await page.click(".jp-NotebookPanel-toolbar .jp-Button[title='Restart the kernel, then re-run the whole notebook']");
-        await page.waitForSelector(".jp-Dialog-content", {visible: true});
-        await page.click(".jp-Dialog-content button.jp-mod-accept");
+        // Use our custom keyboard shortcut to run all cells
+        await page.keyboard.press("R");
+        await page.keyboard.press("R");
+
         await page.evaluate(() => (document.scrollTop = 0));
     }
 };
