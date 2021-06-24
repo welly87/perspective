@@ -80,7 +80,6 @@ function styleListener(regularTable) {
         marked = tops;
     }
 
-    // this._cached_range = this._cached_range || {};
     for (const tr of regularTable.children[0].children[1].children) {
         for (const td of tr.children) {
             const metadata = regularTable.getMeta(td);
@@ -93,11 +92,11 @@ function styleListener(regularTable) {
             if (is_numeric) {
                 const is_positive = metadata.user > 0;
                 const is_negative = metadata.user < 0;
-                const [hex, r, g, b] = (() => {
+                const [hex, r, g, b, gradhex] = (() => {
                     if (plugin?.pos_color !== undefined) {
-                        return is_positive ? plugin.pos_color : is_negative ? plugin.neg_color : ["", 0, 0, 0];
+                        return is_positive ? plugin.pos_color : is_negative ? plugin.neg_color : ["", 0, 0, 0, ""];
                     } else {
-                        return is_positive ? this._pos_color : is_negative ? this._neg_color : ["", 0, 0, 0];
+                        return is_positive ? this._pos_color : is_negative ? this._neg_color : ["", 0, 0, 0, ""];
                     }
                 })();
 
@@ -120,8 +119,8 @@ function styleListener(regularTable) {
                     td.style.backgroundColor = "";
                     td.style.color = "";
                     td.style.position = "relative";
-                    if (td.children.length > 0 && td.children[0].nodeType === Node.ELEMENT_NODE) {
-                        td.children[0].style.backgroundColor = `rgb(${r},${g},${b})`;
+                    if (gradhex !== "" && td.children.length > 0 && td.children[0].nodeType === Node.ELEMENT_NODE) {
+                        td.children[0].style.background = gradhex;
                     }
                 } else {
                     td.style.backgroundColor = "";
@@ -148,6 +147,7 @@ function styleListener(regularTable) {
             td.classList.toggle("psp-align-left", is_th || !is_numeric);
         }
     }
+    this._div_factory.clear();
 }
 
 function get_psp_type(metadata) {
@@ -304,7 +304,7 @@ function _format(parts, val, plugins = {}, use_table_schema = false) {
     const is_numeric = type === "integer" || type === "float";
     if (is_numeric && plugin?.color_mode === "bar") {
         const a = Math.max(0, Math.min(0.95, Math.abs(val / plugin.gradient) * 0.95));
-        const div = document.createElement("div");
+        const div = this._div_factory.get();
         const anchor = val >= 0 ? "left" : "right";
         div.setAttribute("style", `width:${(a * 100).toFixed(2)}%;position:absolute;${anchor}:0;height:80%;top:10%;`);
         return div;
@@ -385,6 +385,34 @@ function get_rule(regular, tag, def) {
     }
 }
 
+function make_gradient(chromahex) {
+    const [r, g, b] = chromahex.rgb();
+    const [r1, g1, b1] = chromahex.set("hsl.h", (chromahex.get("hsl.h") - 15) % 360).rgb();
+    const [r2, g2, b2] = chromahex.set("hsl.h", (chromahex.get("hsl.h") + 15) % 360).rgb();
+    return `linear-gradient(to right top,rgb(${r1},${g1},${b1}),rgb(${r},${g},${b}) 50%,rgb(${r2},${g2},${b2}))`;
+}
+
+class elem_factory {
+    constructor(name) {
+        this._name = name;
+        this._elements = [];
+        this._index = 0;
+    }
+
+    clear() {
+        this._index = 0;
+    }
+
+    get() {
+        if (!this._elements[this._index]) {
+            this._elements[this._index] = document.createElement(this._name);
+        }
+        const elem = this._elements[this._index];
+        this._index += 1;
+        return elem;
+    }
+}
+
 export async function createModel(regular, table, view, extend = {}) {
     const config = await view.get_config();
 
@@ -403,10 +431,16 @@ export async function createModel(regular, table, view, extend = {}) {
     ]);
 
     const _plugin_background = chroma(get_rule(regular, "--plugin--background", "#FFFFFF")).rgb();
-    let _pos_color = get_rule(regular, "--rt-pos-cell--color", "#0000ff");
-    _pos_color = [_pos_color, ...chroma(_pos_color).rgb()];
-    let _neg_color = get_rule(regular, "--rt-neg-cell--color", "#ff0000");
-    _neg_color = [_neg_color, ...chroma(_neg_color).rgb()];
+    let _pos_color = get_rule(regular, "--rt-pos-cell--color", "#338DCD");
+    const chroma_pos = chroma(_pos_color);
+    const _pos_grad = make_gradient(chroma_pos);
+    _pos_color = [_pos_color, ...chroma_pos.rgb(), _pos_grad];
+
+    let _neg_color = get_rule(regular, "--rt-neg-cell--color", "#FF5942");
+    const chroma_neg = chroma(_neg_color);
+    const _neg_grad = make_gradient(chroma_neg);
+    _neg_color = [_neg_color, ...chroma_neg.rgb(), _neg_grad];
+
     const model = Object.assign(extend, {
         _view: view,
         _table: table,
@@ -421,7 +455,8 @@ export async function createModel(regular, table, view, extend = {}) {
         _neg_color,
         _column_paths: column_paths.filter(path => {
             return path !== "__ROW_PATH__" && path !== "__ID__";
-        })
+        }),
+        _div_factory: new elem_factory("div")
     });
     regular.setDataListener(dataListener.bind(model, regular));
     return model;
